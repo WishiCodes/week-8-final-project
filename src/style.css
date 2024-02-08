@@ -1,0 +1,78 @@
+body {
+  background-color: #f9f7fe;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+form,
+main {
+  border-bottom: 1px solid rgb(192, 192, 192);
+}
+main,
+.app {
+  display: block;
+}
+form,
+.current-weather {
+  display: flex;
+}
+
+form {
+  justify-content: center;
+  padding-bottom: 25px;
+}
+main {
+  padding: 30px 0;
+}
+.app {
+  background-color: white;
+  width: 570px;
+  border-radius: 25px;
+  margin: 80px auto;
+  padding: 45px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+}
+.search-box {
+  width: 300px;
+  margin-right: 10px;
+  background-color: rgb(235, 219, 250);
+}
+.search-submit {
+  color: white;
+  background-color: blueviolet;
+}
+
+.current-weather {
+  justify-content: space-between;
+}
+
+.value {
+  font-size: 80px;
+  font-weight: bold;
+  right: -15px;
+  top: -30px;
+}
+.icon {
+  margin-right: -25px;
+}
+.degree {
+  font-size: 28px;
+  right: -10px;
+  top: -72px;
+}
+.value,
+.emoji,
+.degree {
+  position: relative;
+}
+.search-box,
+.search-submit {
+  padding: 15px;
+  border-radius: 10px;
+  border: none;
+}
+.current-weather p,
+footer {
+  color: rgba(39, 33, 66, 0.4);
+}
+.current-weather div p strong {
+  color: red;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <title>My weather application</title>
+</head>
+
+<body>
+    <div class="app">
+        <header>
+            <form id="search-form">
+                <input class="search-box" id="city-name" name="search" type="search" placeholder="Find weather for..."
+                    required />
+                <input class="search-submit" type="submit" value="Search" />
+            </form>
+        </header>
+        <main>
+            <div class="current-weather">
+                <div>
+                    <h1 id="city"></h1>
+                    <p>
+                        <span id="date-element"></span>, <span id="condition"></span>
+                        <br />
+                        Humidity: <strong id="humidity"></strong>, Wind: <strong id="wind-speed"></strong>
+                    </p>
+                </div>
+                <div>
+                    <span id="icon"></span><span class="value" id="temp-value"></span><span class="degree">°C</span>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>
+                This project was coded by
+                <a href="https://github.com/WishiCodes" target="_blank">Arezou Maleki</a> and is on
+                <a href="https://github.com/WishiCodes/week7homework" target="_blank">GitHub</a> and hosted on
+                <a href="https://week-7-homework.netlify.app/" target="_blank">Netlify</a>
+            </p>
+        </footer>
+    </div>
+</body>
+<script src="src/index.js"></script>
+
+</html>
