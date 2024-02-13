@@ -20,6 +20,8 @@ function showTempData(response) {
 
   let icon = document.querySelector("#icon");
   icon.innerHTML = `<img class="icon" src="${response.data.condition.icon_url}">`;
+
+  getForecastData(response.data.city);
 }
 
 function showDate(date) {
@@ -44,11 +46,6 @@ function showDate(date) {
   return `${day} ${hour}:${minute}`;
 }
 
-function updateCity(city) {
-  let apiKey = "a6a6a4b703t4o07f59125c740d4c5bf3";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(showTempData);
-}
 
 function searchCity(event) {
   event.preventDefault();
@@ -56,7 +53,52 @@ function searchCity(event) {
   updateCity(cityName.value);
 }
 
+function updateCity(city) {
+  let apiKey = "a6a6a4b703t4o07f59125c740d4c5bf3";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(showTempData);
+}
+
+function getForecastData(city) {
+  apiKey = "a6a6a4b703t4o07f59125c740d4c5bf3";
+  apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+  axios.get(apiUrl).then(showForecast);
+}
+function showDay(newTime) {
+  let date = new Date(newTime * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
+}
+function showForecast(response) {
+  let forecastElement = "";
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastElement =
+        forecastElement +
+        `<div class="forecast-day">
+                    <div>
+                        ${showDay(day.time)}
+                    </div>
+                    <div>
+                        <img class="forecast-icon" src="${day.condition.icon_url
+        }" />
+                    </div>
+                    <div class="forecast-temp">
+                        <div><strong>${Math.round(
+          day.temperature.maximum
+        )}°</strong></div>
+                        <div>${Math.round(day.temperature.minimum)}°</div>
+                    </div>
+                </div>`;
+    }
+  });
+  let forecast = document.querySelector("#forecast");
+  forecast.innerHTML = forecastElement;
+}
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
+
 updateCity("Sydney");
+
