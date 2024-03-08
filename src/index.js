@@ -46,7 +46,6 @@ function showDate(date) {
   return `${day} ${hour}:${minute}`;
 }
 
-
 function searchCity(event) {
   event.preventDefault();
   let cityName = document.querySelector("#city-name");
@@ -80,13 +79,14 @@ function showForecast(response) {
                         ${showDay(day.time)}
                     </div>
                     <div>
-                        <img class="forecast-icon" src="${day.condition.icon_url
-        }" />
+                        <img class="forecast-icon" src="${
+                          day.condition.icon_url
+                        }" />
                     </div>
                     <div class="forecast-temp">
                         <div><strong>${Math.round(
-          day.temperature.maximum
-        )}°</strong></div>
+                          day.temperature.maximum
+                        )}°</strong></div>
                         <div>${Math.round(day.temperature.minimum)}°</div>
                     </div>
                 </div>`;
@@ -99,6 +99,4 @@ function showForecast(response) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
 
-
 updateCity("Sydney");
-

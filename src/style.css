@@ -5,7 +5,6 @@ body {
 form,
 main {
   border-bottom: 1px solid rgb(235, 219, 250);
-  
 }
 main,
 .app {
@@ -45,7 +44,7 @@ main {
 .search-submit {
   color: white;
   font-family: Georgia, "Times New Roman", Times, serif;
-  background-color: #82589F;
+  background-color: #82589f;
   font-size: 16px;
   width: 130px;
 }
@@ -85,7 +84,7 @@ footer {
   color: rgba(39, 33, 66, 0.4);
 }
 .current-weather div p strong {
-  color: #FC427B;
+  color: #fc427b;
 }
 footer {
   text-align: center;
@@ -103,7 +102,7 @@ footer {
 .forecast-temp {
   display: flex;
   justify-content: space-around;
-  color: #FC427B;
+  color: #fc427b;
 }
 .forecast-day {
   text-align: center;
